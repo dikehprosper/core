@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import ProtectedRoute from "./guards/ProtectedRoute";
+import Landing from "./pages/landing/Landing";
+import PublicGuard from "./guards/PublicRoute";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <PublicGuard>
+            <Landing />
+          </PublicGuard>
+        } />
+        <Route path="/login" element={
+          <PublicGuard>
+            <Login />
+          </PublicGuard>
+        } />
+        <Route path="/register" element={
+          <PublicGuard>
+            <Register />
+          </PublicGuard>
+        } />
+        <Route path="/forgotpassword" element={
+          <PublicGuard>
+            <ForgotPassword />
+          </PublicGuard>
+        } />
+        <Route path="/reset/:token" element={
+          <PublicGuard>
+            <ResetPassword />
+          </PublicGuard>
+        } />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
