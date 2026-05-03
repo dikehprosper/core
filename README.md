@@ -1,7 +1,7 @@
 
 # Job Board Frontend
 
-An interactive job board web application for job seekers built with React.
+A fast starter kit for authentication and user management, built with React. This APP is designed for developers who want to quickly set up a secure frontend without writing everything from scratch. Just clone, install, and add your own features!
 
 ## Features
 
