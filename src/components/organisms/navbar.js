@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
-import ThemeToggle from './themeToggle';
+import ThemeToggle from '../molecules/themeToggle';
+import "../../pages/landing/landing.css";
 
 const Navbar = ({ menuOpen, setMenuOpen }) => {
     useEffect(() => {
@@ -15,7 +16,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
 
   return (
       <nav className="nav">
-          <h2>JobBoard</h2>
+          <h2>Core</h2>
           <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <span style={{ fontSize: "20px", marginRight: "3px" }}>✕</span> : "☰"}
           </div>

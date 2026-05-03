@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { resetAccessToken } from "../auth";
-const baseUrl = import.meta.env.VITE_API_URL;
+const baseUrl = process.env.REACT_APP_API_URL;
 
 const baseQueryWithInterceptor = (baseOptions) => {
   const baseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: async (headers) => {
       let token = localStorage.getItem("Tkn");
-
+console.log("Preparing headers with token:", token);
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
@@ -38,8 +38,7 @@ const baseQueryWithInterceptor = (baseOptions) => {
         const { clearClientData } = await import("../../features/client");
         api.dispatch(clearClientData());
 
-
-        window.location.href = `${window.location.origin}/auth`;
+        window.location.replace("/login");
       }
     }
 

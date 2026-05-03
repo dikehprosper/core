@@ -1,6 +1,12 @@
-export const validateEmail = (emailAddress) => {
+export const isValidateEmail = (emailAddress) => {
     // Ensure input exists and is a string
     if (!emailAddress || typeof emailAddress !== "string") {
+        return { isValid: false, message: "Email is required" };
+    }
+
+    // Trim email before validation
+    emailAddress = emailAddress.trim();
+    if (emailAddress === "") {
         return { isValid: false, message: "Email is required" };
     }
 
@@ -37,8 +43,14 @@ export const isPasswordValid = (password) => {
     const generalFailureMessage =
         "Password must be at least 8 characters long and contain both letters and numbers";
 
-    // Ensure password exists and is a string
-    if (!password || typeof password !== "string") {
+    // Ensure password exists, is a string, and is not empty
+    if (typeof password !== "string") {
+        return { isValid: false, message: "Password is required", generalFailureMessage: generalFailureMessage };
+    }
+    // Trim password before validation
+    password = password.trim();
+
+    if (password === "") {
         return { isValid: false, message: "Password is required", generalFailureMessage: generalFailureMessage };
     }
 
@@ -63,4 +75,52 @@ export const isPasswordValid = (password) => {
     }
 
     return { isValid: true, message: "Valid password" };
+};
+
+export const isNameValid = (name) => {
+    const generalFailureMessage = "Name must be at least 2 characters and contain only valid characters";
+
+    // Ensure name exists and is a string
+    if (typeof name !== "string") {
+        return { isValid: false, message: "Name is required", generalFailureMessage };
+    }
+
+    // Trim input
+    name = name.trim();
+
+    if (name === "") {
+        return { isValid: false, message: "Name is required", generalFailureMessage };
+    }
+
+    // Minimum length
+    if (name.length < 2) {
+        return { isValid: false, message: "Name must be at least 2 characters", generalFailureMessage };
+    }
+
+    // Maximum length (optional but smart)
+    if (name.length > 50) {
+        return { isValid: false, message: "Name is too long", generalFailureMessage };
+    }
+
+    // Allow letters, spaces, hyphens, and apostrophes
+    const namePattern = /^[A-Za-z\s'-]+$/;
+
+    if (!namePattern.test(name)) {
+        return {
+            isValid: false,
+            message: "Name can only contain letters, spaces, hyphens, and apostrophes",
+            generalFailureMessage
+        };
+    }
+
+    // Prevent multiple consecutive spaces
+    if (name.includes("  ")) {
+        return {
+            isValid: false,
+            message: "Name cannot contain consecutive spaces",
+            generalFailureMessage
+        };
+    }
+
+    return { isValid: true, message: "Valid name" };
 };

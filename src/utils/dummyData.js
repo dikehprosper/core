@@ -1,18 +1,22 @@
-import { FaBriefcase, FaRocket, FaBrain } from "react-icons/fa"; 
+import { FaRocket, FaCode, FaCubes } from "react-icons/fa";
 
 export const LANDING_PAGE_CARD_DATA = [
     {
         icon: <FaRocket />,
-        header: "Create & Publish Jobs Instantly",
-        details: "Post job listings in seconds with a fast and simple dashboard."
+        header: "Launch Instantly",
+        details:
+            "Download the project and get started in seconds with a ready-to-use setup."
     },
     {
-        icon: <FaBriefcase />,
-        header: "Apply & Manage Opportunities",
-        details: "Talents can explore and apply to job listings seamlessly across the platform."
+        icon: <FaCode />,
+        header: "Developer Friendly",
+        details:
+            "Clean, structured codebase designed for easy customization and scaling."
     },
     {
-        icon: <FaBrain />,
-        header: "Smart Matching",
-        details: "Get job recommendations based on your skills and experience."
-    }]
+        icon: <FaCubes />,
+        header: "Build on Top",
+        details:
+            "Extend features, plug in your own logic, and shape it into your own product."
+    }
+];

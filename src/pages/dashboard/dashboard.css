@@ -31,34 +31,6 @@
   gap: 20px;
 }
 
-/* JOB LIST */
-.job-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.job-card {
-  padding: 15px;
-  border-radius: 12px;
-  background: white;
-  cursor: pointer;
-  border: 1px solid #eee;
-  transition: 0.2s;
-}
-
-.job-card:hover {
-  transform: translateY(-3px);
-}
-
-/* JOB DETAILS */
-.job-details {
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid #eee;
-}
-
 .apply-btn {
   margin-top: 20px;
   padding: 10px 15px;
@@ -115,7 +87,4 @@
     display: block;
   }
 
-  .job-details {
-    display: none;
-  }
 }

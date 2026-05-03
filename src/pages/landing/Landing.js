@@ -1,8 +1,8 @@
 import "./landing.css";
 import { useState } from "react";
-import Navbar from '../../components/navbar';
-import Footer from "../../components/footer";
+import Footer from "../../components/organisms/footer";
 import { LANDING_PAGE_CARD_DATA } from "../../utils/dummyData";
+import Navbar from "../../components/organisms/navbar";
 
 export default function Landing() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Landing() {
             <div className="content">
                 <section className="hero">
                     <div className="hero-left">
-                        <h1>Find/Publish Jobs</h1>
+                        <h1>Build/Publish Fast</h1>
                         <p>Built for Talents and Companies.</p>
                         <div className="hero-buttons">
                             <a href="/register" className="btn-primary2">Get Started</a>

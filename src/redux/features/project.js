@@ -1,12 +1,7 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 
-interface ProjectState {
-  projects: any[]; // Use a proper type if you have one
-  allProjects: any[];
-}
-
-const initialState: ProjectState = {
+const initialState = {
   projects: [],
   allProjects: [],
 };
@@ -15,14 +10,14 @@ const projectSlice = createSlice({
   name: "project",
   initialState,
   reducers: {
-    setProjects: (state, action: PayloadAction<any[]>) => {
+    setProjects: (state, action) => {
       state.projects = action.payload;
     },
     clearProjects: (state) => {
       state.projects = [];
     },
     // Action to set all projects
-    setAllProjects: (state, action: PayloadAction<any[]>) => {
+    setAllProjects: (state, action) => {
       state.allProjects = action.payload;
     },
   },

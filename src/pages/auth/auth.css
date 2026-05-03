@@ -12,12 +12,11 @@
   flex-direction: column;
 }
 
-/* LOGIN / REGISTER BOX */
 .auth-box {
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   flex: 1;
 }
 
@@ -138,8 +137,7 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px white inset !important;
   caret-color: #0a0a0a !important;
 }
-
-html.dark input:-webkit-autofill,
+a html.dark input:-webkit-autofill,
 html.dark input:-webkit-autofill:hover,
 html.dark input:-webkit-autofill:focus {
   -webkit-text-fill-color: white !important;
@@ -241,6 +239,7 @@ html.dark .dashboard {
   cursor: pointer;
   margin-bottom: 10px;
   background: transparent;
+  position: relative;
 }
 
 .gmail-button:hover {
@@ -337,6 +336,16 @@ html.dark .password-forgot-password:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
+  justify-content: "flex-start";
+}
+
+.custom-error-text {
+  justify-content: flex-start;
+  margin-left: 3px;
+}
+
+.custom-error-text-google {
+  top: 33px;
 }
 
 .success-text {

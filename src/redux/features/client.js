@@ -1,18 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-const sampleClient = {
-  value: {
-    userData: {
-      id: "user_12345",
-      firstName: "Michael",
-      lastName: "Adeyemi",
-      email: "michael@example.com",
-    },
-    codeNotifier: {
-      showCodeNotifier: false,
-      codeValue: "",
-    },
-  },
-};
 
 const initialState = {
   userData: null,

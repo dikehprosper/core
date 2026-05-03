@@ -30,7 +30,7 @@ An interactive job board web application for job seekers built with React.
 1. Clone the repository:
 	```bash
 	git clone <repo-url>
-	cd job-board-frontend
+	cd core
 	```
 2. Install dependencies:
 	```bash
