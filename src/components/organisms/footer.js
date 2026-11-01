@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
       <footer className="footer">
-          <p>© {new Date().getFullYear()} JobBoard. All Rights Reserved.</p>
-          <p>Simple. Fast. Job Management System.</p>
+          <p>© {new Date().getFullYear()} Core. All Rights Reserved.</p>
+          <p>A Ready-to-Customize Template for Your Next Big Idea.</p>
       </footer>
   )
 }

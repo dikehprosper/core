@@ -13,6 +13,7 @@ import { updateClientData } from "../../redux/features/client";
 import { APP_PAGES } from "../../utils/navigationRoutes";
 import { useGoogleLogin } from "@react-oauth/google";
 import useGoogleAuth from "./GoogleAuth";
+import AuthNavbar from "../../components/organisms/authNavbar";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -162,11 +163,7 @@ export default function Login() {
 
   return (
     <div className='auth-page-outer'>
-      <nav className='auth-nav'>
-        <a href='/'>
-          <h2>JobBoard</h2>
-        </a>
-      </nav>
+      <AuthNavbar />
 
       <div className='auth-page'>
         <div className='auth-page-header'>

@@ -4,6 +4,7 @@ import "./auth.css";
 import Footer from "../../components/organisms/footer";
 import { useForgotPasswordMutation } from "../../redux/services/auth";
 import { isValidateEmail } from "../../utils/helpers";
+import AuthNavbar from "../../components/organisms/authNavbar";
 
 export default function ForgotPassword() {
   // Controlled form state for forgot password email input
@@ -115,11 +116,7 @@ export default function ForgotPassword() {
   return (
     <div className='auth-page-outer'>
       {/* Top navigation */}
-      <nav className='auth-nav'>
-        <a href='/'>
-          <h2>JobBoard</h2>
-        </a>
-      </nav>
+      <AuthNavbar />
 
       {/* Main forgot password page */}
       <div className='auth-page'>

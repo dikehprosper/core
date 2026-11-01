@@ -16,7 +16,7 @@ const Navbar = ({ menuOpen, setMenuOpen }) => {
 
   return (
       <nav className="nav">
-          <h2>Core</h2>
+          <h1>Core</h1>
           <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <span style={{ fontSize: "20px", marginRight: "3px" }}>✕</span> : "☰"}
           </div>

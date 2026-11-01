@@ -13,6 +13,7 @@ import {
 } from "../../utils/helpers";
 import { useSignUpMutation } from "../../redux/services/auth";
 import useGoogleAuth from "./GoogleAuth";
+import AuthNavbar from "../../components/organisms/authNavbar";
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -182,12 +183,7 @@ export default function Register() {
 
   return (
     <div className='auth-page-outer'>
-      <nav className='auth-nav'>
-        <a href='/'>
-          <h2>JobBoard</h2>
-        </a>
-      </nav>
-
+      <AuthNavbar />
       <div className='auth-page'>
         <div className='auth-page-header'>
           <h6

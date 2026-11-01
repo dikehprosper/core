@@ -4,6 +4,7 @@ import "./auth.css";
 import Footer from "../../components/organisms/footer";
 import { isPasswordValid } from "../../utils/helpers";
 import { useResetPasswordMutation } from "../../redux/services/auth";
+import AuthNavbar from "../../components/organisms/authNavbar";
 
 export default function ResetPassword() {
     // Controlled form state for new password input
@@ -140,11 +141,7 @@ export default function ResetPassword() {
     return (
         <div className='auth-page-outer'>
             {/* Top navigation */}
-            <nav className='auth-nav'>
-                <a href='/'>
-                    <h2>JobBoard</h2>
-                </a>
-            </nav>
+            <AuthNavbar />
 
             {/* Main reset password page */}
             <div className='auth-page'>
